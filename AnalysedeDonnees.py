@@ -1,11 +1,12 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import requests
 import streamlit as st
-from preProcessing import preProcessing
-from normalize import normalize
-from decomposition import decomposition
-from vizualisation import vizualisation
+from src.cleanData.preProcessing import preProcessing
+from src.cleanData.normalize import normalize
+from src.decompositionData.decomposition import decomposition
+from src.dataViz.vizualisation import vizualisation
 
 st.title("Analyse de Données")
 
@@ -43,7 +44,7 @@ st.scatter_chart(pd.DataFrame(pca,columns=["x","y"]))
 for i in st.session_state['df'].columns:
     st.session_state['values'][i] = st.sidebar.selectbox(i, st.session_state['df'][i])
 if st.sidebar.button(st.session_state['button']):
-    data = requests.get("http://localhost:5000/modelApi", params=st.session_state['values']).json()
+    data = requests.get("http://paulmass.pythonanywhere.com/modelApi", params=st.session_state['values']).json()
     st.session_state['output_query']= data
     st.sidebar.header(st.session_state["Query Response"])
     st.sidebar.write( st.session_state['output_query'])
