@@ -1,12 +1,11 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import requests
 import streamlit as st
-from src.cleanData.preProcessing import preProcessing
-from src.cleanData.normalize import normalize
-from src.decompositionData.decomposition import decomposition
-from src.dataViz.vizualisation import vizualisation
+from preProcessing import preProcessing
+from normalize import normalize
+from decomposition import decomposition
+from vizualisation import vizualisation
 
 st.title("Analyse de Données")
 
