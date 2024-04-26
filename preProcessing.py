@@ -5,7 +5,7 @@ class preProcessing():
         pass
 
     def load(self) -> None:
-        self.df = pd.read_csv('/home/malloc/Project/PimaDiabete/diabete.csv')
+        self.df = pd.read_csv('diabete.csv')
 
     def getDF(self) -> pd.DataFrame:
         return self.df
