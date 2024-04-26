@@ -5,7 +5,7 @@ class preProcessing():
         pass
 
     def load(self) -> None:
-        self.df = pd.read_csv('diabete.csv')
+        self.df = pd.read_csv('/home/malloc/Project/PimaDiabete/diabete.csv')
 
     def getDF(self) -> pd.DataFrame:
         return self.df
@@ -29,7 +29,7 @@ class preProcessing():
         return self.df[self.df.columns[-1]].value_counts()
 
     def describeDF(self) -> pd.DataFrame:
-      return self.getDataWithoutLabels().describe()
+        return self.getDataWithoutLabels().describe()
 
     def corrDF(self) -> pd.DataFrame:
         return self.getDataWithoutLabels().corr()
