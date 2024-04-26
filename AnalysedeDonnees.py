@@ -1,8 +1,7 @@
-from src.cleanData.preProcessing import preProcessing
-from src.cleanData.normalize import normalize
-from src.decompositionData.decomposition import decomposition
-
-from src.models.splitData import splitData
+from preProcessing import preProcessing
+from normalize import normalize
+from decomposition import decomposition
+from splitData import splitData
 import pandas as pd
 import matplotlib.pyplot as plt
 import warnings
